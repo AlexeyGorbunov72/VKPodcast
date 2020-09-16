@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				CA630B7825122219000C7D88 /* AppDelegate.swift */,
+				CA630B8C25122F70000C7D88 /* CreatePodcastViewController.swift */,
 				CA630B7A25122219000C7D88 /* SceneDelegate.swift */,
 				CA630B7C25122219000C7D88 /* ViewController.swift */,
 				CA630B7E25122219000C7D88 /* Main.storyboard */,
 				CA630B812512221C000C7D88 /* Assets.xcassets */,
 				CA630B832512221C000C7D88 /* LaunchScreen.storyboard */,
 				CA630B862512221C000C7D88 /* Info.plist */,
-				CA630B8C25122F70000C7D88 /* CreatePodcastViewController.swift */,
 			);
 			path = VKPodcast;
 			sourceTree = "<group>";
@@ -291,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62MNR2QKFT;
 				INFOPLIST_FILE = VKPodcast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62MNR2QKFT;
 				INFOPLIST_FILE = VKPodcast/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
