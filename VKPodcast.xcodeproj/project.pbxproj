@@ -13,6 +13,7 @@
 		CA630B8025122219000C7D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA630B7E25122219000C7D88 /* Main.storyboard */; };
 		CA630B822512221C000C7D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA630B812512221C000C7D88 /* Assets.xcassets */; };
 		CA630B852512221C000C7D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA630B832512221C000C7D88 /* LaunchScreen.storyboard */; };
+		CA630B8D25122F70000C7D88 /* CreatePodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630B8C25122F70000C7D88 /* CreatePodcastViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		CA630B812512221C000C7D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA630B842512221C000C7D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA630B862512221C000C7D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA630B8C25122F70000C7D88 /* CreatePodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePodcastViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				CA630B812512221C000C7D88 /* Assets.xcassets */,
 				CA630B832512221C000C7D88 /* LaunchScreen.storyboard */,
 				CA630B862512221C000C7D88 /* Info.plist */,
+				CA630B8C25122F70000C7D88 /* CreatePodcastViewController.swift */,
 			);
 			path = VKPodcast;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				CA630B7D25122219000C7D88 /* ViewController.swift in Sources */,
 				CA630B7925122219000C7D88 /* AppDelegate.swift in Sources */,
 				CA630B7B25122219000C7D88 /* SceneDelegate.swift in Sources */,
+				CA630B8D25122F70000C7D88 /* CreatePodcastViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
