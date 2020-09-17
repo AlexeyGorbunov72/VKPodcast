@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }()
     
     @objc func pressNext(_ button: UIButton){
-        let vc = storyboard?.instantiateViewController(identifier: "createPodcast") as! CreatePodcastViewController
+        let vc = storyboard?.instantiateViewController(identifier: "createPodcastScroll") as! CreatePodcastScrollViewController
         navigationController?.pushViewController(vc, animated: true)
     }
     override func viewDidLoad() {
