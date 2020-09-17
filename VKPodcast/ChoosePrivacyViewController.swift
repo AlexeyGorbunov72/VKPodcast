@@ -31,7 +31,7 @@ class ChoosePrivacyViewController: UIViewController, UICollectionViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         myCollectionView.delegate = self
-       
+        view.backgroundColor = .black
     }
     
 

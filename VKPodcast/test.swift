@@ -12,6 +12,7 @@ class CreatePodcastScrollViewController: UIViewController, UIImagePickerControll
     
     @IBOutlet weak var policyPicker: UIView!
     
+    @IBOutlet weak var policyConstraint: NSLayoutConstraint!
     @IBOutlet weak var myScrollview: MyScrollView!
     @IBOutlet weak var chivrone: UIImageView!
     @IBOutlet weak var dropUpView: UIView!
@@ -75,11 +76,18 @@ class CreatePodcastScrollViewController: UIViewController, UIImagePickerControll
     @IBAction func pressDownloadButton(_ sender: UIButton) {
         
     }
+    @IBAction func pressNextButton(_ sender: Any) {
+        if nextButton.backgroundColor == UIColor(displayP3Red: 0.286, green: 0.525, blue: 0.8, alpha: 1){
+            let vc = storyboard?.instantiateViewController(identifier: "redact") as! RedactViewController
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Новый подкаст"
-        nextButton.isEnabled = false
-        self.navigationController?.navigationBar.setValue(false, forKey: "hidesShadow")
+    
+        
         nextButton.backgroundColor = UIColor(displayP3Red: 0.286, green: 0.525, blue: 0.8, alpha: 0.4)
         nextButton.layer.cornerRadius = 10
         makeRoundTextFields()
@@ -99,18 +107,15 @@ class CreatePodcastScrollViewController: UIViewController, UIImagePickerControll
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnDropUp(_:)))
         dropUpView.addGestureRecognizer(tapGesture)
-        let policyFrame = CGRect(x: 12, y: view.bounds.height, width: view.bounds.width - 24, height: 0)
-        policyPicker.frame = policyFrame
-        policyPicker.isHidden = true
+        
+        policyConstraint.constant = view.frame.size.height + 300
+        view.layoutIfNeeded()
+        myScrollview.showsVerticalScrollIndicator = false
+        myScrollview.showsHorizontalScrollIndicator = false
         
     }
     @objc func tapOnDropUp(_ sender: Any){
-        view.bringSubviewToFront(policyPicker)
         
-        UIView.animate(withDuration: 0.3, animations: {
-            self.policyPicker.isHidden = false
-            self.policyPicker.frame.size.height += 500
-        })
     }
     func isThisTagExists(tag: Int) -> Bool{
         for img in arrayChekboxes{
@@ -152,9 +157,11 @@ class CreatePodcastScrollViewController: UIViewController, UIImagePickerControll
                                 self.imageView.layer.borderWidth = 1
                                 self.imageView.layer.borderColor = CGColor(srgbRed: 0, green: 0, blue: 0, alpha: 0.12)
                                 
-                    }, completion: nil)
+                }, completion: { _ in
+                    self.timeToEnambleNext()})
             
         }
+        
     
     
         
@@ -168,9 +175,23 @@ extension CreatePodcastScrollViewController: UITextViewDelegate{
         }
         return true
     }
-
+    func timeToEnambleNext(){
+        var counter = 0
+        for textField in textFields{
+            if textField.text.trimmingCharacters(in: .whitespacesAndNewlines).count > 0{
+                counter += 1
+            }
+            
+        }
+        if counter == 2 && imageView.image != nil{
+            
+            UIView.animate(withDuration: 0.3, animations: {
+                self.nextButton.backgroundColor = UIColor(displayP3Red: 0.286, green: 0.525, blue: 0.8, alpha: 1)
+            })
+        }
+    }
     func textViewDidBeginEditing(_ textView: UITextView) {
-        
+        timeToEnambleNext()
         if textFields[0].textColor == placeholderColor && textView.tag == 0{
             UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn, animations: {[unowned self] in
                 self.textFields[0].textColor = UIColor.black

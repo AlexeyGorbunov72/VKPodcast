@@ -18,6 +18,9 @@
 		CA630BB12512E02C000C7D88 /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630BB02512E02C000C7D88 /* MyScrollView.swift */; };
 		CA630BB32512EB79000C7D88 /* ChoosePrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630BB22512EB79000C7D88 /* ChoosePrivacyViewController.swift */; };
 		CA630BB52512ECD7000C7D88 /* ChooseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630BB42512ECD7000C7D88 /* ChooseCollectionViewCell.swift */; };
+		CA630BB72513523C000C7D88 /* RedactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630BB62513523C000C7D88 /* RedactViewController.swift */; };
+		CA630BB9251352D5000C7D88 /* myNavi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630BB8251352D5000C7D88 /* myNavi.swift */; };
+		CA630BBB25135833000C7D88 /* TimeCodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA630BBA25135833000C7D88 /* TimeCodeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CA630BB02512E02C000C7D88 /* MyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		CA630BB22512EB79000C7D88 /* ChoosePrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePrivacyViewController.swift; sourceTree = "<group>"; };
 		CA630BB42512ECD7000C7D88 /* ChooseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA630BB62513523C000C7D88 /* RedactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactViewController.swift; sourceTree = "<group>"; };
+		CA630BB8251352D5000C7D88 /* myNavi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myNavi.swift; sourceTree = "<group>"; };
+		CA630BBA25135833000C7D88 /* TimeCodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCodeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 				CA630BB02512E02C000C7D88 /* MyScrollView.swift */,
 				CA630BB22512EB79000C7D88 /* ChoosePrivacyViewController.swift */,
 				CA630BB42512ECD7000C7D88 /* ChooseCollectionViewCell.swift */,
+				CA630BB62513523C000C7D88 /* RedactViewController.swift */,
+				CA630BB8251352D5000C7D88 /* myNavi.swift */,
+				CA630BBA25135833000C7D88 /* TimeCodeCollectionViewCell.swift */,
 			);
 			path = VKPodcast;
 			sourceTree = "<group>";
@@ -155,10 +164,13 @@
 			files = (
 				CA630B7D25122219000C7D88 /* ViewController.swift in Sources */,
 				CA630BB52512ECD7000C7D88 /* ChooseCollectionViewCell.swift in Sources */,
+				CA630BB72513523C000C7D88 /* RedactViewController.swift in Sources */,
+				CA630BBB25135833000C7D88 /* TimeCodeCollectionViewCell.swift in Sources */,
 				CA630BB12512E02C000C7D88 /* MyScrollView.swift in Sources */,
 				CA630B7925122219000C7D88 /* AppDelegate.swift in Sources */,
 				CA630B7B25122219000C7D88 /* SceneDelegate.swift in Sources */,
 				CA630BAF2512D8D5000C7D88 /* test.swift in Sources */,
+				CA630BB9251352D5000C7D88 /* myNavi.swift in Sources */,
 				CA630B8D25122F70000C7D88 /* CreatePodcastViewController.swift in Sources */,
 				CA630BB32512EB79000C7D88 /* ChoosePrivacyViewController.swift in Sources */,
 			);

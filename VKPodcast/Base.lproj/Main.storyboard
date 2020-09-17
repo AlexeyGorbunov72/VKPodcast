@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="iah-Qo-Iav">
             <objects>
-                <navigationController id="Fuu-x0-5Gc" sceneMemberID="viewController">
+                <navigationController id="Fuu-x0-5Gc" customClass="MyNavigationController" customModule="VKPodcast" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1kD-PZ-d6T">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -304,9 +304,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjN-VO-dKT">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DjN-VO-dKT">
                                 <rect key="frame" x="13" y="962" width="388" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="lXq-Cv-FfY"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="Leb-OF-JuG" kind="embed" id="CVo-zC-eah"/>
                                 </connections>
@@ -320,6 +322,9 @@
                                 <state key="normal" title="Далее">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressNextButton:" destination="7nm-9A-k60" eventType="touchUpInside" id="v6Z-jB-Mpk"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGI-hh-Ycy" customClass="MyScrollView" customModule="VKPodcast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="46" width="414" height="759"/>
@@ -550,14 +555,27 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="sx8-UH-xn7"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="NrX-xR-eLa"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtR-br-l3x">
+                                <rect key="frame" x="12" y="44" width="390" height="1"/>
+                                <color key="backgroundColor" red="0.84292811160000003" green="0.84705471990000003" blue="0.85108494759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="SIN-1e-dT0"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="o5R-7Z-3My" firstAttribute="trailing" secondItem="gGI-hh-Ycy" secondAttribute="trailing" id="19v-0D-hPL"/>
                             <constraint firstItem="gGI-hh-Ycy" firstAttribute="top" secondItem="o5R-7Z-3My" secondAttribute="top" constant="2" id="6Lf-gi-5t2"/>
                             <constraint firstItem="o5R-7Z-3My" firstAttribute="bottom" secondItem="mBR-2P-hPg" secondAttribute="bottom" constant="8" id="8sX-Sc-CTd"/>
+                            <constraint firstItem="o5R-7Z-3My" firstAttribute="trailing" secondItem="rtR-br-l3x" secondAttribute="trailing" constant="12" id="FHY-nb-yKz"/>
                             <constraint firstItem="mBR-2P-hPg" firstAttribute="leading" secondItem="o5R-7Z-3My" secondAttribute="leading" constant="12" id="H9I-t1-zKR"/>
                             <constraint firstItem="mBR-2P-hPg" firstAttribute="top" secondItem="gGI-hh-Ycy" secondAttribute="bottom" constant="5" id="IOH-A2-wsI"/>
+                            <constraint firstItem="DjN-VO-dKT" firstAttribute="top" secondItem="o5R-7Z-3My" secondAttribute="top" constant="918" id="Rgk-gw-Fui"/>
+                            <constraint firstItem="o5R-7Z-3My" firstAttribute="leading" secondItem="rtR-br-l3x" secondAttribute="leading" constant="-12" id="Txx-Do-gUq"/>
+                            <constraint firstItem="o5R-7Z-3My" firstAttribute="top" secondItem="rtR-br-l3x" secondAttribute="top" id="ZvK-bH-5PI"/>
+                            <constraint firstItem="DjN-VO-dKT" firstAttribute="leading" secondItem="o5R-7Z-3My" secondAttribute="leading" constant="13" id="abc-7X-WAx"/>
+                            <constraint firstItem="o5R-7Z-3My" firstAttribute="trailing" secondItem="DjN-VO-dKT" secondAttribute="trailing" constant="13" id="fsh-HK-ZQG"/>
                             <constraint firstItem="gGI-hh-Ycy" firstAttribute="leading" secondItem="o5R-7Z-3My" secondAttribute="leading" id="otM-lr-3Uk"/>
                             <constraint firstItem="o5R-7Z-3My" firstAttribute="trailing" secondItem="mBR-2P-hPg" secondAttribute="trailing" constant="12" id="xgi-jH-w7l"/>
                         </constraints>
@@ -572,6 +590,7 @@
                         <outlet property="imageView" destination="9Fa-mm-Brw" id="Ueh-hU-F0C"/>
                         <outlet property="myScrollview" destination="gGI-hh-Ycy" id="tDr-mp-sa4"/>
                         <outlet property="nextButton" destination="mBR-2P-hPg" id="nUC-SK-Mjm"/>
+                        <outlet property="policyConstraint" destination="Rgk-gw-Fui" id="QhA-sP-5Sf"/>
                         <outlet property="policyPicker" destination="DjN-VO-dKT" id="WmH-dE-PKh"/>
                         <outletCollection property="textFields" destination="g01-fn-6vL" collectionClass="NSMutableArray" id="R6c-gK-Nmb"/>
                         <outletCollection property="textFields" destination="wtW-wZ-11H" collectionClass="NSMutableArray" id="xAR-ur-gdP"/>
@@ -645,6 +664,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xji-SB-iMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2394.202898550725" y="94.754464285714278"/>
+        </scene>
+        <!--Redact View Controller-->
+        <scene sceneID="0VW-hV-gPq">
+            <objects>
+                <viewController storyboardIdentifier="redact" id="9M3-OT-3Xg" customClass="RedactViewController" customModule="VKPodcast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PRJ-du-lib">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ТАЙМКОДЫ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-Sq-4IU">
+                                <rect key="frame" x="12" y="343.5" width="92" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.44153946640000002" green="0.48931151630000003" blue="0.54759633539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DBD-Sq-4IU" firstAttribute="centerY" secondItem="OMU-3w-4ci" secondAttribute="centerY" constant="-100" id="48G-QH-b1v"/>
+                            <constraint firstItem="DBD-Sq-4IU" firstAttribute="leading" secondItem="OMU-3w-4ci" secondAttribute="leading" constant="12" id="uMe-KI-CTF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OMU-3w-4ci"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSi-AI-Qqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3073.913043478261" y="107.8125"/>
         </scene>
     </scenes>
     <resources>
